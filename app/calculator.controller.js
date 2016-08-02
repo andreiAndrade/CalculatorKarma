@@ -1,10 +1,21 @@
 angular.module('calculatorApp', []).controller('CalculatorController', function CalculatorController($scope) {
   
-  $scope.z = undefined;
+  $scope.z = 0;
 
   $scope.sum = function() {
-    var sum = ($scope.x + $scope.y);
-
-    $scope.z = (sum % 2 == 0) ? 'pair' : 'odd';
+    $scope.z = ($scope.x + $scope.y);
   };
+
+  $scope.sub = function() {
+  	$scope.z = ($scope.x - $scope.y);
+  }
+
+  $scope.mult = function() {
+  	$scope.z = ($scope.x * $scope.y);
+  }
+
+  $scope.div = function() {
+  	$scope.z = ($scope.x / $scope.y);
+  	$scope.z = $scope.z == Infinity ? 'Nenhum número pode ser dividido por 0' : $scope.z;
+  }
 });
